@@ -17,7 +17,7 @@ def splitting(b):
 		else:
 			a+=letter
 	array= array + [a]
-def login1():
+def login1():     //Make a login of this learning management system
 	username=str(input("enter username: "))
 	password=str(input("enter password: "))
 	with open('admin.txt','r') as file:
@@ -48,7 +48,7 @@ def login2():
 	return(op)
 	#splitting function is made too
 
-def save_course():
+def save_course():  //function to save courses
 	a=0
 	Num=['1','2','3']
 	with open('test.txt',"w") as file:
