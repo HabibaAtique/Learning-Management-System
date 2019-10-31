@@ -6,7 +6,7 @@ List_of_sem=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 stdRegNoList=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 stdNamesList=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 stdCourseList=[[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]
-def splitting(b):
+def splitting(b):#splitting lines
 	global array
 	array=[]
 	a=""
@@ -17,7 +17,7 @@ def splitting(b):
 		else:
 			a+=letter
 	array= array + [a]
-def login1():
+def login1():#login admin
 	username=str(input("enter username: "))
 	password=str(input("enter password: "))
 	with open('admin.txt','r') as file:
@@ -29,7 +29,7 @@ def login1():
 		else:
 				print("_Sorry! you are not signed in._TRY AGAIN_")
 
-def login2():
+def login2():#login student
 	username=str(input("enter reg. #: "))
 	password=str(input("enter password: "))
 	global op
@@ -48,7 +48,7 @@ def login2():
 	return(op)
 	#splitting function is made too
 
-def save_course():
+def save_course():#saving course
 	a=0
 	Num=['1','2','3']
 	with open('test.txt',"w") as file:
@@ -56,7 +56,7 @@ def save_course():
 			if List_of_creditHours[a] != 0:
 				file.write(str(List_of_codes[a])+','+str(List_of_Names[a])+','+str(List_of_creditHours[a])+','+str(List_of_sem[a]+'\n'))
 			a+=1
-def save_student():
+def save_student():#saving student information
 	a=0
 	s=0
 	with open('new.txt',"w") as file:
@@ -69,7 +69,7 @@ def save_student():
 					file.write(str(stdCourseList[a][s])+',')
 					s+=1
 			
-def load_course():
+def load_course():#loading external files for course (only)
 	with open('test.txt','r') as file:
 		a=0
 		s=0
